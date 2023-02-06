@@ -10,6 +10,7 @@ import MuseumScreen from './screens/MuseumScreen'
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import ConfirmCodeScreen from './screens/ConfirmCodeScreen'
+import Chat from './screens/Chat'
 
 
 const Stack = createNativeStackNavigator();
@@ -25,36 +26,37 @@ const App = () => {
     }
   })
 
+  // AsyncStorage.getItem('token')
+  //   .then(res => {
+  //     console.log('res', res);
 
-
-  AsyncStorage.getItem('token')
-    .then(res => {
-      console.log('res', res);
-
-      if (res)
-        axios.post('https://seal-app-mobi6.ondigitalocean.app/token/tokencontrol', {
-          token: res
-        })
-          .then(res => {
-            setloginStatus(true);
-            setloading(false);
+  //     if (res)
+  //       axios.post('https://seal-app-mobi6.ondigitalocean.app/token/tokencontrol', {
+  //         token: res
+  //       })
+  //         .then(res => {
+  //           setloginStatus(true);
+  //           setloading(false);
             
-          })
-          .catch(err => {
-            setloginStatus(false);
-            setloading(false);
+  //         })
+  //         .catch(err => {
+  //           setloginStatus(false);
+  //           setloading(false);
             
-          })
-      else {
-        console.log('no token!');
+  //         })
+  //     else {
+  //       console.log('no token!');
         
-        setloading(false)
-      }
-    })
+  //       setloading(false)
+  //     }
+  //   })
 
 
   return (<>
-    <Provider store={store} >
+  <SafeAreaView>
+    <Chat/>
+  </SafeAreaView>
+    {/* <Provider store={store} >
       {
         loading == true ? <Text>loading..</Text> : <>
           <NavigationContainer>
@@ -83,7 +85,7 @@ const App = () => {
         </>
       }
 
-    </Provider>
+    </Provider> */}
   </>
   )
 }
