@@ -15,12 +15,13 @@ const LoginScreen = ({navigation}: any) => {
             password: password
         }
 
-        axios.post('https://seal-app-mobi6.ondigitalocean.app/token', user)
+        axios.post('https://seal-app-mobi6.ondigitalocean.app/token/login', user)
             .then(res => {
-                AsyncStorage.setItem('token', res.data.token)
+                AsyncStorage.setItem('webUserId', res.data.webUserId)
                 .then(res => {
-                    navigation.navigate('Museum')
+                    navigation.navigate('Confirm')
                 })
+            
             })
             .catch(err => {
                 console.log('err', err);

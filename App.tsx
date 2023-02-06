@@ -9,14 +9,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import MuseumScreen from './screens/MuseumScreen'
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import ConfirmCodeScreen from './screens/ConfirmCodeScreen'
 
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-
-  console.log('hello');
-
 
   const [loginStatus, setloginStatus] = useState(false);
   const [loading, setloading] = useState(true);
@@ -40,14 +38,11 @@ const App = () => {
           .then(res => {
             setloginStatus(true);
             setloading(false);
-            console.log('OK!');
             
-
           })
           .catch(err => {
             setloginStatus(false);
             setloading(false);
-            console.log('REJECT');
             
           })
       else {
@@ -70,11 +65,15 @@ const App = () => {
                   <>
                     <Stack.Screen name="Museum" component={MuseumScreen} />
                     <Stack.Screen name="Login" component={LoginScreen} />
+                    <Stack.Screen name="Confirm" component={ConfirmCodeScreen} />
+
                   </>
 
                   : <>
                     <Stack.Screen name="Login" component={LoginScreen} />
                     <Stack.Screen name="Museum" component={MuseumScreen} />
+                    <Stack.Screen name="Confirm" component={ConfirmCodeScreen} />
+
                   </>
               }
 
