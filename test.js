@@ -1,0 +1,3 @@
+let data =  {
+    "company": "Code Academy", 
+    "emailAddresses": [{"email": "yildiz.cagatay@hotmail.com", "label": "home"}], "familyName": "Yıldız", "givenName": "Çağatay", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "phoneNumbers": [{"label": "mobile", "number": "(543) 733-1470"}, {"label": "home", "number": "(222) 333-333"}], "postalAddresses": [], "recordID": "920DC172-B9B0-4DB7-93CE-BDB2C76812B0:ABPerson", "thumbnailPath": "", "urlAddresses": []}

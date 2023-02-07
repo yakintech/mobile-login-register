@@ -34,6 +34,16 @@ const Chat = () => {
             setmessages([...messages, data])
         })
 
+
+        // socket.on('upload2', (data) => {
+        //     console.log('data ', data);  
+        // })
+
+        socket.on('upload3', (data) => {
+            console.log('data ', data);
+            
+        })
+
     }, [messages])
 
     return (<>
@@ -62,3 +72,5 @@ const styles = StyleSheet.create({
         padding: 10,
     },
 });
+
+

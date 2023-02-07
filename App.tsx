@@ -11,6 +11,10 @@ import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import ConfirmCodeScreen from './screens/ConfirmCodeScreen'
 import Chat from './screens/Chat'
+import ImagePickerSample from './screens/ImagePickerSample'
+import ContactSample from './screens/ContactSample'
+import VibrationSample from './screens/VibrationSample'
+import FileAccessSample from './screens/FileAccessSample'
 
 
 const Stack = createNativeStackNavigator();
@@ -54,7 +58,10 @@ const App = () => {
 
   return (<>
   <SafeAreaView>
-    <Chat/>
+    {/* <ImagePickerSample/> */}
+    {/* <ContactSample/> */}
+    {/* <VibrationSample/> */}
+    <FileAccessSample/>
   </SafeAreaView>
     {/* <Provider store={store} >
       {
